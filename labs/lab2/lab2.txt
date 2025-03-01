@@ -1,0 +1,15 @@
+1:
+    bash-3.2$ cat ~/.bashrc
+    export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+    export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+    bash-3.2$ echo $PS1
+    \s-\v\$
+    bash-3.2$ nano ~/.bashrc
+    bash-3.2$ source ~/.bashrc
+    bash:3.2-connorsullivan@Connors-MacBook-Air: ~$ 
+
+2:
+    \s:\v-\u@\h: \w$
+    bash: ech: command not found
+    ’10’
+    ’5’
