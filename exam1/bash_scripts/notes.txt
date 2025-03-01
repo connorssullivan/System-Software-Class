@@ -1,0 +1,89 @@
+- What are shell scripts
+    Shell screpis are executable files made up of 1 or more simple yet powerfull commands. What makes them powerfull is that they con 
+    execute many commands in the same files
+
+- What is a Shell?
+    A CLI Interface between the user and the linux syste, enabling the user to use commands to interact with the kernal
+
+- What are 2 ways to interact with the linux shell?
+    1: Interactivly: Typing commands in the CLI
+    2: Shell Scripts: A script a user can execute whith a program
+
+- Common Linus Commands
+    date: display date
+    cal: display calendar
+    whoami: display user name
+    pwd: display present working directory
+    cd: change directory
+    echo:: display string on screen
+    man: display manual of the command
+    ls: display file or directory name
+
+- What is a Pipe? 
+    A symbol that passes the output from one command, as the input of another
+
+    Ex:
+        ls -l >list.txt: Pass the permissions of a file to a txt file
+        sort list.txt > list.out: sort a text file and pass it to another file as an input
+
+
+- Variables are accesed usidng the $ opeerator, and when initalized cannot have whitespace
+    Ex: 
+        x=5
+        echo "x is $x"
+- read can be used to read input from CLI, and read only can be used for a constant Variables
+    Ex: 
+        read x
+        echo $x
+        readonly y
+        echo $y
+
+- Gravestone Operators `` will not do string interpalation, and \ followed by variable will not print the variable
+
+- -n willpeint no new line after cho
+
+- Enviormental Variables, are variables initalized in the enviorment, and can be used to control the variables of shell scripts, Normally they are all upercase
+    $HOME: The home directory of the current user.
+    $PATH: A colon-separated list of directories to search for commands. E.g./bin:/usr/bin:/usr/local/bin
+    $0: The name of the shell script.
+    $#: The number of arguments passed.
+    $n: nth argument that is to store nth argument passed in command line inorder.
+    $*: Display all the argument values.
+    $@: Same as $* if you do not put them in quotes. Otherwise, $@ will passyour arguments as separate strings, whereas $* will just pass allparams as a single argument. In general, $@ gives the better behavior.
+    $?: Display exit status of statement. 0 means success; non-zerootherwise. It can also be used to hold return value for functions.
+    $$: The process ID of the shell script. E.g. echo $$
+
+
+- If statments can be used as so 
+    if [ conditional statment ]; then
+        block of code
+    elif [ conditional statment ]; then
+        block of code 
+    else
+        block of code 
+    fi
+
+- Some basic string comparison
+    [ $string1 = $string2 ];then: Returns true if 2 strings are equal
+    [ $string1 != $string2 ];then: Returns true if 2 strings are not equal
+    [ -n file_path ]; then: Returns true if a file is not null
+
+- Some Basic arithmitic operatiors:
+    [ $num1 -eq $num2 ];then: Checks if 2 numbers are equal
+    [ $num1 -ne $num2 ];then: Checks if 2 numbers are not equal
+    [ $num1 -gt $num2 ];then: Rethurns True if num1 is bigger then num2
+    [ $num1 -ge $num2 ];then: Returns True if num1 is greatur or equal to num2
+    [ $num1 -lt $num2 ];then: Returns True if num1 is less then num 2
+    [ $num1 -le $num2 ];then: Returns true if num1 is less or equal to num 2
+
+- File Conditions: 
+    -d file true if the file is a directory
+    -e file true if the file has already been created
+    -s file true if the file has nonzero size
+    -f file true if the file is a regular file
+    -r file, -w file, -x file true if the file is readable, writable, executable, respectively
+
+- Logical Operators
+    && = and
+    || = or 
+    ! = Nor
