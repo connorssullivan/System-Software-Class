@@ -1,0 +1,20 @@
+- Kernal Mode: When a program has direct access to underlying hardware and recources
+
+- User Mode: A program that does not have access to underlying hardware and recources
+
+- System Calls (Kernal Calls): Software interfaces (Usually written in C), that the user can call to interact with the kernal
+                               without having to go into kernal mode.
+
+- System Calls are expensive Procedures, Here is a few of their dudye:
+    .change user mode to kernel mode, known as Context Switch
+    .save all parameters of a user program to CPU
+    .load all the arguments data to CPU
+    .check file permission in case of read/write request
+    .execute the system call procedure
+    .after the system call, load all the saved parameters to CPU
+    .change from kernel mode back to user mode
+    .continue execution of user’s program
+
+
+- System Calls use Unbuffered I/O, which means there is no intermediat storage buffer we need to save to. This ensures 
+  imediate Output bur at the cost of more System calls, which can be inefficient
