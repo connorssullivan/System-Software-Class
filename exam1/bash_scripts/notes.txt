@@ -87,3 +87,70 @@
     && = and
     || = or 
     ! = Nor
+
+
+- Case: statments can check if a certain string contains another string as a substring
+    Ex:
+        case $var in 
+            substring) 
+                commands;;
+            another_substring)
+                commands;;
+        esac
+        
+
+- For Loop: Used to loop through arrays, there are 2 types
+    Ex:
+        for name [in words ...]; do
+            commands
+            commands
+            ....
+        done
+        for (( expr1 ; expr2 ; expr3 )); do
+            commands
+            commands
+            ....
+        done
+
+    Ex: This for loop can iterate through a sequence
+        for i in $(seq 1 10); do
+
+        for i in $(seq 10 -2 3); do #decrement by 2 for each iteration
+
+- While Loop:
+    Ex:
+        while [ conditional expression ]; do
+            commands
+            commands
+            ....
+        done
+
+
+- Until Loop: Like a while loob but goes untit a certain condition is True
+    Ex:
+        value=10
+        until [ $value -lt 1 ]; do
+            echo $value
+            value=$((value-1))
+        done
+
+- break: Statment that exits a loop
+- continue: Statment that continues to next iteration of a loop
+
+
+- Function: A collection of statment that can execute a specific task
+    .Heps with code reuse
+    .Enhances readabiliy
+    .Modaralizes Software
+    .Allows easy maitmence
+
+    Ex:
+        function_name(){
+            statement1
+            statement2
+            ....
+        }
+
+- Functions are not Hoisted
+
+-local: keyword to define variable in function scope
