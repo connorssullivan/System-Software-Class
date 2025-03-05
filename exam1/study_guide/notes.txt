@@ -1,0 +1,84 @@
+Linux Basic Concepts:
+    -Kernal: This is an interface used to interact with underlying hardware, Ie Drivers, display, hard Drives etc
+    -Shell: This is a CLI used to talk to the kernal
+    -C: A programing language thats low level, allot of system calls are written 
+    -System call: A function used to request services from the kernal, and avoid going into kernal mode
+
+
+Command Line Argument vs Prompt Arguments:
+    -In Shell Programming we can access prompt inputs using read, and we can access command line using $n
+    -In C we can use scan to get prompt inputs, And we can use argv[] to access cmd line Arguments
+
+Hierachial Directiorys:
+
+
+Static Vs Shared Library:
+    -Static Libraries: Compiled Code linked at compile Time
+    -Shared Libraries: Dynamically linked at runtime, Reduces Binary Size
+
+Enviormental Varriables: 
+    -Enviormental Variables: These are variables that are stored on the system, here is a few 
+        $PS1 -> Cimmand prompt appearence
+        $HOME -> Users Home Directiorys
+        $PATH -> List of directories for executable file
+
+Basic Linux Commands:
+    ls = list directory contents
+    cd = change directory
+    pwd = print working directory 
+    cp = copy files
+    mv = move/rename files
+    rm = rm files/ directories
+    cat = view or concatonate files
+    head/tail = view beginning or end of file
+    grep = search patterns
+    sort = sort lines in file
+    tr = translate or delete charecters
+    pipes = Chain commands together.
+    > & < → Input/output redirection
+
+Comments in bash scrips are #
+
+
+Basic If Statment And Loop Blocks
+    if [ $1 -eq $2 ]; then
+        echo "One is Equal"
+    else 
+        echo "One is not Equal"
+    fi
+
+    for i in $(seq 1 2 10); do
+        if [ $i -eq 3 ]; then
+            break
+        fi
+        echo "$i"
+    done
+
+    case $anser in
+        y* | Y*)
+            echo "Yes";;
+        n* | N*) 
+            echo "No";;
+
+    num=(expr $1 + $2)
+
+    printf "%d\n" $num
+
+
+Functions:
+    function sum(){
+        local a=$1
+        local b=$2
+        local c=$a+$b
+        return c
+    }
+
+
+open() ----> Open a file ----> fd = open("file.txt", O_RDWR);
+read() ----> Read data from a file ----> read(fd, buffer, 100);
+write()	----> Write data to a file ----> write(fd, buffer, 50);
+lseek()	----> Move file offset (seek) ----> lseek(fd, 10, SEEK_SET);
+pread() ----> Read from a file without changing the file offset ---->pread(fd, buffer, 100, 10);
+pwrite() ----> Write to a file without changing the file offset ----> pwrite(fd, buffer, 50, 20);
+umask() ----> Set default file permissions ----> umask(0022);
+        

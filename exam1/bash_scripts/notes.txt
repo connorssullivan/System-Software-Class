@@ -15,7 +15,7 @@
     whoami: display user name
     pwd: display present working directory
     cd: change directory
-    echo:: display string on screen
+    echo: display string on screen
     man: display manual of the command
     ls: display file or directory name
 
@@ -153,4 +153,60 @@
 
 - Functions are not Hoisted
 
--local: keyword to define variable in function scope
+- local: keyword to define variable in function scope. By default if not declared local, every varriable is global
+
+- return: Keyword to return a value from a function, can only return between a number between [0, 255]
+
+- expr: A command used to evaluate arithmatic, there must be a space around arithmatica operator. Most operators need a \ in front to be
+        Reconized like the \*, \<, \>, \<=, \>=, \!=.
+
+- Here are some basic Sting Operations:
+    
+    Ex: Sting Length
+        x="Geeks"
+        echo "$(#x)"
+    
+    Ex: String Concatination
+        x="Geeks"
+        x="$x $x"
+
+    Ex: Take a substring
+        str="How Are You"
+        str1=$(str:3) -> Takes Sub string from index 3 till end
+        str2=$(str:3:2) -> Takes SubString from index 3 of length 2
+
+- printf: Command similar to echo but better for formatted output
+    %d = Digit
+    %s = String 
+    %f = Float
+    %c = Character
+
+    Ex: printf "format specification" parameter1 parameter2 ...
+        printf "%d %s %c \n" 2 "Hi" ’h’ # output: 2 Hi h
+
+
+- export: Used to export variable to outher scripts
+
+    Ex:
+        /bin/sh
+        # export.sh: export variables to child scripts
+        export a="Cool Cool"
+        export b="Fun Fun"
+        ./import1.sh
+        ./import2.sh
+        exit 0
+
+        #!/bin/sh
+        # import1.sh
+        echo "$a"
+        exit 0
+        
+        #!/bin/sh
+        # import2.sh
+        echo "$b"
+        exit 0
+        ./export.sh
+
+
+
+        

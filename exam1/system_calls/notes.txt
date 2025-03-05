@@ -30,7 +30,41 @@ Source File ---------------------------------------> Destination File
                       Write Prompt to Screen
                       Accept Input
                       If File Doesnt Exist, ABORT
-                      
+                      Read Input ________
+                                        | Loop 
+                                        |Until Fail
+                      Write Output ------
+                      Close Output File
+                      Write completion Message
+                      Terminate Program
+
+- Library Functions: These are functions that are build on top of system calls, they can use temporary storage (BuFFers), 
+                     and run in the user space. With Library Functions, sys calls are only needed when the Buffer is full
 
 
 
+- function prototypes for read file, write file, respectively:
+    #include <unistd.h>
+    ssize_t read(int fd, const void *buf, size_t nbyte);
+    ssize_t write(int fd, const void *buf, size_t nbyte);
+
+      fd = The file descriptor is a non-negative integer value, obtained from a call
+      to open(). The values 0, 1, 2 can also be given, representing
+      standard input, standard output & standard error, respectively.
+
+      buf = Points to a character array, with content to be written to (or read from)
+      the file pointed to by filedes.
+
+      nbyte = Specifies the number of bytes to be written to (or read from) the
+      character array, buf, into the file pointed to by filedes.
+      The read/write function returns the number of bytes successfully read
+      from or written into the file, respectively, which may at times be less
+      than the specified nbytes. It returns -1 if an exceptional condition is
+      encountered
+
+
+- A File Descriptor is an index to a file in the description table
+
+- To the Kernal all open files are referred to by the file descriptor
+
+- When we open an existing file or create a new file, the program returns an error
